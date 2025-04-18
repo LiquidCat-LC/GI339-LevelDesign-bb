@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GI339_LevelDesign.sln"
+    "dotnet.defaultSolution": "GI339-LevelDesign-bb.sln"
 }
