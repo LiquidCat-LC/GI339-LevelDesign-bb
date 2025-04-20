@@ -6,10 +6,8 @@ public class ForTrigger : MonoBehaviour
 {
     public JumpscareManager jumpscareManager;
     public GameObject jumpscareObj;
-    
     public GameObject NowJumpObj;
     
-
     public bool Istrigger;
 
     bool hasInstantiated = false;
@@ -17,9 +15,9 @@ public class ForTrigger : MonoBehaviour
     public GameObject player;
     private PlayerStateMachine playerStateMachine;
     float newWalkSpeed = 1f;
-    float oldWalkSpeed = 2f;
-    float newRunSpeed = 1.5f;
-    float oldRunSpeed = 2f;
+    float oldWalkSpeed = 3f;
+    float newRunSpeed = 1f;
+    float oldRunSpeed = 3f;
     public GameObject[] InvisibleWall;
     public bool FirstJump;
     public GameObject Tutorial;

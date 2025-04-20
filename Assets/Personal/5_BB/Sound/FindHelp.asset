@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FindHelp
   m_EditorClassIdentifier: 
   Dialogues:
-  - DialogueAudio: {fileID: 8300000, guid: be68ffee32184e74581917aa064f1c32, type: 3}
-    SubtitleType: 0
+  - DialogueAudio: {fileID: 8300000, guid: 3fac104927d7fdd4fa72fc8a7acb36af, type: 3}
+    SubtitleType: 1
     SingleSubtitle:
       Time: 0
       Narrator: 
@@ -22,4 +22,28 @@ MonoBehaviour:
       Text:
         GlocText: That's people! Let's ask for help
         NormalText: 
-    Subtitles: []
+    Subtitles:
+    - Time: 0
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: Is that....
+        NormalText: 
+    - Time: 1.0851598
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: someone over there?
+        NormalText: 
+    - Time: 2.977761
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: ' I have to hurry.'
+        NormalText: 
+    - Time: 5.590373
+      Narrator: 
+      NarratorColor: {r: 1, g: 1, b: 1, a: 1}
+      Text:
+        GlocText: This might be my only chance to get help!
+        NormalText: 

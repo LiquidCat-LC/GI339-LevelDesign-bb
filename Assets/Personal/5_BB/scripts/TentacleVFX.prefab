@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpscare: {fileID: 5901875462713326475}
   soundClips:
-  - {fileID: 8300000, guid: 7af004efe5476274481789a34c33554b, type: 3}
+  - {fileID: 8300000, guid: ab443c4ff2c0ae6488c973025da6f317, type: 3}
   - {fileID: 8300000, guid: 344d2cecb4975284c9007b34579687df, type: 3}
   - {fileID: 8300000, guid: 3222cc134c0c2254387f4d328f766829, type: 3}
   volume: 1

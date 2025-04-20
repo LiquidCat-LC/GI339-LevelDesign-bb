@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: PressF
   m_EditorClassIdentifier: 
   Objectives:
-  - ObjectiveKey: 
+  - ObjectiveKey: Press F to light a lighter
     ObjectiveTitle:
-      GlocText: 
-      NormalText: 
-    SubObjectives: []
+      GlocText: Press F to light a lighter
+      NormalText: Press F to light a lighter
+    SubObjectives:
+    - SubObjectiveKey: pressF
+      CompleteCount: 0
+      ObjectiveText:
+        GlocText: Press F to light a lighter
+        NormalText: Press F to light a lighter
