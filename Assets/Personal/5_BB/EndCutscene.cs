@@ -9,7 +9,7 @@ public class EndCutscene : MonoBehaviour
     public AudioClip[] newClip;
 
     public Image fadeImage;
-    public TMP_Text theEnd;
+    public GameObject theEnd;
 
     public IEnumerator PlaySoundRepeatedly(float delayBetweenPlays, int repeatCount,int sound)
     {
@@ -53,6 +53,7 @@ public class EndCutscene : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("The end");
         if (other.CompareTag("Player"))
         {
             StartCoroutine(FadeIn());

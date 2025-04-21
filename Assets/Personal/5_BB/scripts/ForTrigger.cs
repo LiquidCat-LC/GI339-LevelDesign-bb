@@ -21,37 +21,51 @@ public class ForTrigger : MonoBehaviour
     public GameObject[] InvisibleWall;
     public bool FirstJump;
     public GameObject Tutorial;
+    public bool isSafeZone;
     
     private void Awake()
     {
         jumpscareManager = JumpscareManager.Instance;
         playerStateMachine = player.GetComponent<PlayerStateMachine>();
         FirstJump = true ;
+        isSafeZone = false;
     }
     public void Update()
     {
-        if(Istrigger == true && !hasInstantiated )
+        if(!isSafeZone)
         {
-            if(FirstJump)
+            if(Istrigger == true && !hasInstantiated )
             {
-                Tutorial.gameObject.SetActive(true);
+                if(FirstJump)
+                {
+                    Tutorial.gameObject.SetActive(true);
+                }
+                NowJumpObj = Instantiate(jumpscareObj, transform.position, transform.rotation);
+                hasInstantiated = true;
+                duringJump = true;
+                playerStateMachine.PlayerBasicSettings.WalkSpeed = newWalkSpeed;
+                playerStateMachine.PlayerBasicSettings.RunSpeed = newRunSpeed;
             }
-            NowJumpObj = Instantiate(jumpscareObj, transform.position, transform.rotation);
-            hasInstantiated = true;
-            duringJump = true;
-            playerStateMachine.PlayerBasicSettings.WalkSpeed = newWalkSpeed;
-            playerStateMachine.PlayerBasicSettings.RunSpeed = newRunSpeed;
+            else if(Istrigger == false && duringJump == true)
+            {
+                if(FirstJump)
+                {
+                    Tutorial.gameObject.SetActive(false);
+                    FirstJump = false;
+                }
+                playerStateMachine.PlayerBasicSettings.WalkSpeed = oldWalkSpeed;
+                playerStateMachine.PlayerBasicSettings.RunSpeed = oldRunSpeed;
+                StartCoroutine(Wait(5f));
+            }
         }
-        else if(Istrigger == false && duringJump == true)
+        else
         {
-            if(FirstJump)
+            if(NowJumpObj != null)
             {
-                Tutorial.gameObject.SetActive(false);
-                FirstJump = false;
+                StartCoroutine(Wait(5f));
+                playerStateMachine.PlayerBasicSettings.WalkSpeed = oldWalkSpeed;
+                playerStateMachine.PlayerBasicSettings.RunSpeed = oldRunSpeed;
             }
-            playerStateMachine.PlayerBasicSettings.WalkSpeed = oldWalkSpeed;
-            playerStateMachine.PlayerBasicSettings.RunSpeed = oldRunSpeed;
-            StartCoroutine(Wait(5f));
         }
         
     }
@@ -67,6 +81,9 @@ public class ForTrigger : MonoBehaviour
         Destroy(NowJumpObj);
     }
 
-
+    public void SafeZoneCheck()
+    {
+        isSafeZone = true;
+    }
 
 }
